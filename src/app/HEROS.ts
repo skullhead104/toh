@@ -1,6 +1,6 @@
-import {Hero} from './hear';
+import {Hero} from './hero';
 
-export const HEROS: Hero = [
+export const HEROS: Hero[] = [
 
   { id: 11, name: 'Mr. Nice' },
   { id: 12, name: 'Narco' },
@@ -13,4 +13,4 @@ export const HEROS: Hero = [
   { id: 19, name: 'Magma' },
   { id: 20, name: 'Tornado' }
 
-]
+];
