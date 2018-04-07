@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {Hero} from '../hero';
 import {HEROS} from '../HEROS';
+import {HeroService} from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss']
+
 })
 export class HeroesComponent implements OnInit {
 
@@ -17,15 +19,26 @@ export class HeroesComponent implements OnInit {
 
   // hero = new Hero();
 
-  heroes = HEROS;
+  heroes: Hero[];
   selectedHero: Hero;
 
-  constructor() {
+  // 2. 서비스를 생성자로 등록하기
+  constructor(private heroService: HeroService) {
   //   this.hero.id = 104;
   //   this.hero.name = 'RYUPE';
+
   }
 
   ngOnInit() {
+    // Call Service
+    // 잘못된 예시 - 컴포넌트와 서비스간 의존성 발생
+    // const heroService = new HeroService();
+    // this.heroes = heroService.getHeroes();
+
+    this.heroService.getHeroes()
+      .subscribe(data =>{
+        this.heroes = data;
+      });
 
   }
 
