@@ -8,13 +8,15 @@ import {formatSize} from '@angular/cli/utilities/stats';
 import {FormsModule} from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import {HeroService} from './hero.service';
+import { HomeworkComponent } from './homework/homework.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HomeworkComponent
   ],
   imports: [
     BrowserModule, FormsModule,
